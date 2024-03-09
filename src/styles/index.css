@@ -1,0 +1,6 @@
+@layer reset, base, tokens, recipes, utilities;
+
+:root {
+  --font-fira-code: 'Fira Code', monospace;
+  --font-dosis: 'Dosis Variable', sans-serif;
+}

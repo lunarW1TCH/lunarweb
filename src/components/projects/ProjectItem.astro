@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { flex } from '~panda/patterns';
+import H1 from '../mdx/H1.astro';
+import P from '../mdx/P.astro';
+import { Badge } from '../ui/badge';
+import { Link } from '../ui/link';
+import { SquareArrowOutUpRight } from 'lucide-react';
+import { css } from '~panda/css';
+type Props = {
+  project: CollectionEntry<'project'>;
+};
+
+const { project } = Astro.props;
+---
+
+<div
+  class={flex({
+    border: '1px solid',
+    borderColor: 'border.subtle',
+    p: '4',
+    w: '100%',
+    maxW: '750px',
+    rounded: 'md',
+    flexDir: 'column',
+    bgColor: 'bg.default',
+    shadow: 'md',
+  })}
+>
+  <H1
+    class={css({
+      display: project.body ? undefined : 'none',
+    })}
+  >
+    <Link href={`/projects/${project.slug}`}>
+      {project.data.title}
+      <SquareArrowOutUpRight
+        className={css({
+          w: '16px',
+          h: '16px',
+          mb: '2.5',
+        })}
+      />
+    </Link>
+  </H1>
+  <P>{project.data.shortDescription}</P>
+  <div
+    class={flex({
+      flexWrap: 'wrap',
+      gap: '2',
+      mt: '2',
+    })}
+  >
+    {
+      project.data.technologies.map((tech) => (
+        <Badge>
+          <Link href={tech.link}>{tech.name}</Link>
+        </Badge>
+      ))
+    }
+  </div>
+</div>

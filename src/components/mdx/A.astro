@@ -1,0 +1,23 @@
+---
+import { css } from '~panda/css';
+
+type Props = astroHTML.JSX.DefinedIntrinsicElements['a'];
+
+const props = Astro.props;
+---
+
+<a
+  {...props}
+  class={css({
+    fontSize: 'md',
+    fontFamily: 'dosis',
+    color: 'accent.text',
+    _hover: {
+      textDecoration: 'underline',
+      color: 'accent.emphasized',
+    },
+    transition: 'all 0.1s ease-in-out',
+  })}
+>
+  <slot />
+</a>

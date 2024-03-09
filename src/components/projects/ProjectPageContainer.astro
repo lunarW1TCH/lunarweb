@@ -1,0 +1,17 @@
+---
+import { css } from '~panda/css';
+---
+
+<div
+  class={css({
+    w: 'full',
+    maxW: '750px',
+    bgColor: 'bg.default',
+    border: '1px solid',
+    borderColor: 'border.subtle',
+    p: '4',
+    rounded: 'md',
+  })}
+>
+  <slot />
+</div>

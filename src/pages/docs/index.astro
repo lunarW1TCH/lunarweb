@@ -1,0 +1,11 @@
+---
+import MainLayout from '~/layouts/MainLayout.astro';
+import Miau2 from '~/content/blog/miau2.mdx';
+import { vstack } from '~panda/patterns';
+---
+
+<MainLayout>
+  <div class:list={[vstack()]}>
+    <Miau2 />
+  </div>
+</MainLayout>

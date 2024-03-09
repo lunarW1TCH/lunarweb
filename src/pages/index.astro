@@ -1,0 +1,19 @@
+---
+import Introduction from '~/components/home/Introduction';
+import MainLayout from '../layouts/MainLayout.astro';
+import { vstack } from '~panda/patterns';
+---
+
+<MainLayout>
+  <div
+    class:list={[
+      vstack({
+        height: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }),
+    ]}
+  >
+    <Introduction />
+  </div>
+</MainLayout>

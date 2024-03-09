@@ -1,0 +1,52 @@
+---
+import '@fontsource-variable/fira-code';
+import { css } from '~panda/css';
+import '../styles/index.css';
+import '@fontsource-variable/dosis';
+import { ViewTransitions } from 'astro:transitions';
+
+import Navigation from '~/components/Navigation';
+
+type Props = {
+  title?: string;
+};
+
+const { pathname } = Astro.url;
+
+const { title = 'Lunarweb' } = Astro.props;
+---
+
+<!doctype html>
+<html lang='en' class='dark'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body
+    class={css({
+      minH: '100vh',
+      display: 'flex',
+      flexDir: 'column',
+      fontFamily: 'dosis',
+    })}
+  >
+    <Navigation {pathname} client:load />
+    <main
+      class={css({
+        display: 'flex',
+        flexDir: 'column',
+        flexGrow: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        mt: '80px',
+      })}
+    >
+      <slot />
+    </main>
+  </body>
+</html>

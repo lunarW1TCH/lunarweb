@@ -1,0 +1,11 @@
+---
+import { getCollection } from 'astro:content';
+import MainLayout from '~/layouts/MainLayout.astro';
+import ProjectItem from '~/components/projects/ProjectItem.astro';
+
+const projectEntries = await getCollection('project');
+---
+
+<MainLayout>
+  {projectEntries.map((entry) => <ProjectItem project={entry} />)}
+</MainLayout>

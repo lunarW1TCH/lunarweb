@@ -1,0 +1,55 @@
+---
+title: Lunarweb
+shortDescription: You're here, my portfolio website created with Astro, React and PandaCSS. Previous versions used NextJS, and EmotionCSS among others.
+technologies:
+  - name: Astro
+    link: https://astro.build/
+  - name: React
+    link: https://react.dev/
+  - name: PandaCSS
+    link: https://panda-css.com/
+  - name: NextJS
+    link: https://nextjs.org/
+  - name: EmotionCSS
+    link: https://emotion.sh/docs/introduction
+  - name: TypeScript
+    link: https://www.typescriptlang.org/
+imagePath: todo
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import { Link } from '~/components/ui/link';
+export const components = mapComponents(['h2', 'p', 'pre']);
+
+## Lunarweb
+
+A simple website built with <Link href='https://astro.build/'>Astro</Link>.
+
+<br />
+
+For the first version of this website I used React along with EmotionCSS for styling (I am a huge fan of CSS-in-JS).
+
+<br />
+
+Not long after that I rebuilt it with NextJS and PandaCSS. Both frameworks are designed to mix the modern, reactive way of building websites combined with the performance and stability of pre-rendered content.
+
+<br />
+Half a year later I started working on current version of Lunarweb. This time utilizing
+the modular framework Astro which is amazing for building mostly-static websites
+like this one.
+
+<br />
+
+Content of all **/projects** pages is written with <Link href='https://mdxjs.com/'>MDX</Link>, which is a way of mixing React components with syntax of Markdown. Astro has a great support for it. Below you can see a fragment of how it looks like. Along with syntax highlighting which I am utilizing heavily on **/docs** pages.
+
+<br />
+
+```mdx
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import { Link } from '~/components/ui/link';
+export const components = mapComponents([], true);
+
+## Lunarweb
+
+A simple website built with <Link href='https://astro.build/'>Astro</Link>.
+```

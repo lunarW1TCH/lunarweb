@@ -1,0 +1,21 @@
+---
+import { css } from '~panda/css';
+
+type Props = astroHTML.JSX.DefinedIntrinsicElements['h1'];
+
+const { class: className, ...props } = Astro.props;
+---
+
+<h1
+  class:list={[
+    css({
+      fontSize: '4xl',
+      fontFamily: 'dosis',
+      w: '100%',
+    }),
+    className,
+  ]}
+  {...props}
+>
+  <slot />
+</h1>

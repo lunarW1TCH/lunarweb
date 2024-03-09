@@ -1,0 +1,23 @@
+---
+import { css } from '~panda/css';
+
+type Props = astroHTML.JSX.DefinedIntrinsicElements['pre'];
+
+const props = Astro.props;
+---
+
+<div
+  class={css({
+    borderRadius: 'md',
+    overflow: 'hidden',
+    mx: '2',
+    w: '100%',
+  })}
+>
+  <pre
+    class={css({
+      px: '4',
+      py: '2',
+    })}
+    {...props}><slot /></pre>
+</div>

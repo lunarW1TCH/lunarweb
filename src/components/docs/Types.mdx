@@ -1,0 +1,41 @@
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+export const components = mapComponents(['h2', 'h3', 'p', 'pre', 'p']);
+
+## simple-2d-vectors types
+
+Most functions require you to pass a PointLike value which is simply a union of types which hold `x` and `y` values to be extrated by functions and methods.
+
+### Point
+
+```ts
+type Point = {
+  x: number;
+  y: number;
+};
+```
+
+<br />
+
+### ArrayPoint
+
+```ts
+type ArrayPoint = [number, number];
+```
+
+<br />
+
+### Vector
+
+```ts
+class Vector implements Point {
+  // ...
+}
+```
+
+<br />
+
+### PointLike
+
+```ts
+type PointLike = Vector | Point | ArrayPoint;
+```
