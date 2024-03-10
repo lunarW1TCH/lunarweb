@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import SkillItem from '~/components/skills/SkillItem.astro';
+import MainLayout from '~/layouts/MainLayout.astro';
+import { vstack } from '~panda/patterns';
+
+const skillEntries = await getCollection('skill');
+---
+
+<MainLayout>
+  <div
+    class={vstack({
+      w: '100%',
+      gap: '4',
+      my: '12',
+    })}
+  >
+    {
+      skillEntries
+        .filter((entry) => entry.data.type === 'Language')
+        .map((entry) => <SkillItem skill={entry} />)
+    }
+    {
+      skillEntries
+        .filter((entry) => entry.data.type === 'Library/Framework')
+        .map((entry) => <SkillItem skill={entry} />)
+    }
+    {
+      skillEntries
+        .filter((entry) => entry.data.type === 'Tool/Other')
+        .map((entry) => <SkillItem skill={entry} />)
+    }
+  </div>
+</MainLayout>

@@ -1,0 +1,17 @@
+name: TypeScript
+link: https://www.typescriptlang.org/
+type: Language
+projects:
+  - name: Lunarweb
+    link: /
+  - name: rest-api-performance
+    link: /projects/rest-api-performance
+  - name: simple-2d-vectors
+    link: /projects/simple-2d-vectors
+  - name: Minos
+    link: /projects/minos
+jobs:
+  - name: 4CF
+    link: https://www.linkedin.com/company/4cf/
+  - name: ANV
+    link: https://anvproduction.pl/

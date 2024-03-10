@@ -1,0 +1,14 @@
+name: Bun
+link: https://bun.sh/
+type: Tool/Other
+projects:
+  - name: rest-api-performance
+    link: /projects/rest-api-performance
+  - name: Minos
+    link: /projects/minos
+description: 🍞
+jobs:
+  - name: 4CF
+    link: https://www.linkedin.com/company/4cf/
+  - name: ANV
+    link: https://anvproduction.pl/

@@ -7,6 +7,7 @@ import { Badge } from '../ui/badge';
 import { Link } from '../ui/link';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import { css } from '~panda/css';
+
 type Props = {
   project: CollectionEntry<'project'>;
 };
@@ -25,7 +26,6 @@ const { project } = Astro.props;
     flexDir: 'column',
     bgColor: 'bg.default',
     shadow: 'md',
-    my: '2',
   })}
 >
   <H1

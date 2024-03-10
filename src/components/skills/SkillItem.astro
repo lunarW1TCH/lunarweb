@@ -1,0 +1,125 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+import { flex, hstack } from '~panda/patterns';
+import { Link } from '../ui/link';
+import { Icon } from '../ui/icon';
+import { Diamond, BriefcaseBusiness } from 'lucide-react';
+import P from '../mdx/P.astro';
+import { css } from '~panda/css';
+import { Badge } from '../ui/badge';
+
+type Props = {
+  skill: CollectionEntry<'skill'>;
+};
+
+const colors = {
+  lib: '#ffd1dc',
+  lng: '#d1dcff',
+  tool: '#dcffd1',
+};
+
+const getColor = (type: 'Library/Framework' | 'Language' | 'Tool/Other') => {
+  if (type === 'Language') return colors.lng;
+  else if (type === 'Library/Framework') return colors.lib;
+  else return colors.tool;
+};
+
+const { skill } = Astro.props;
+---
+
+<div
+  class={flex({
+    border: '1px solid',
+    borderColor: 'border.subtle',
+    p: '4',
+    w: '100%',
+    maxW: '750px',
+    rounded: 'md',
+    bgColor: 'bg.default',
+    shadow: 'md',
+    alignItems: 'center',
+    flexDir: 'column',
+  })}
+>
+  <div
+    class={hstack({
+      w: '100%',
+    })}
+  >
+    <Icon mt='4'>
+      <Diamond
+        color={getColor(skill.data.type)}
+        width='18px'
+        style={{ marginTop: '4px', marginRight: '8px' }}
+      />
+    </Icon>
+    {
+      skill.data.link ? (
+        <Link textWrap='nowrap' href={skill.data.link} fontSize='xl'>
+          {skill.data.name}
+        </Link>
+      ) : (
+        <p
+          class={css({
+            textWrap: 'nowrap',
+            fontSize: 'xl',
+            fontWeight: '500',
+          })}
+        >
+          {skill.data.name}
+        </p>
+      )
+    }
+
+    <div
+      class={hstack({
+        w: '100%',
+        justifyContent: 'flex-end',
+      })}
+    >
+      <P
+        class={css({
+          justifySelf: 'flex-end',
+        })}
+      >
+        {skill.data.description}
+      </P>
+    </div>
+  </div>
+  <div
+    class={hstack({
+      w: '100%',
+      justifyContent: 'flex-end',
+      mt: '2',
+    })}
+  >
+    {
+      skill.data.projects &&
+        skill.data.projects.map((project) => (
+          <Badge>
+            <Link href={project.link}>{project.name}</Link>
+          </Badge>
+        ))
+    }
+  </div>
+  <div
+    class={hstack({
+      w: '100%',
+      justifyContent: 'flex-end',
+      mt: '2',
+    })}
+  >
+    {
+      skill.data.jobs &&
+        skill.data.jobs.map((job) => (
+          <Badge>
+            <Link href={job.link}>
+              <BriefcaseBusiness />
+              at {job.name}
+            </Link>
+          </Badge>
+        ))
+    }
+  </div>
+</div>

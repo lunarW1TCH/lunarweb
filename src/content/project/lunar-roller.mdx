@@ -1,0 +1,39 @@
+---
+title: lunar-roller
+shortDescription: This is the first website I ever made. It is written with HTML, CSS and Javascript only. It's sole purpose is to allow user to roll multiple-sided dice.
+technologies:
+  - name: JavaScript
+    link: https://developer.mozilla.org/en-US/docs/Web/javascript
+links:
+  - name: Github
+    link: https://github.com/lunarW1TCH/DiceRoller_Dev
+  - name: App
+    link: https://lunarroller.netlify.app/
+priority: 5
+createdOn: 2022-12-27
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
+import { Link } from '~/components/ui/link';
+import { Github, AppWindowMac } from 'lucide-react';
+
+<ProjectHeader>
+  <slot slot='headerTitle'>{frontmatter.title}</slot>
+  <slot slot='linkContent'>
+    <Link href={frontmatter.links[0].link}>
+      <Github />
+      {frontmatter.links[0].name}
+    </Link>
+    <Link ml='4' href={frontmatter.links[1].link}>
+      <AppWindowMac />
+      {frontmatter.links[1].name}
+    </Link>
+  </slot>
+</ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>

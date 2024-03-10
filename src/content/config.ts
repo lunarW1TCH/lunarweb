@@ -56,7 +56,7 @@ const skill = defineCollection({
   type: 'data',
   schema: z.object({
     name: z.string(),
-    link: z.string().url(),
+    link: z.string().optional(),
     description: z.string().optional(),
     projects: z
       .object({
@@ -66,6 +66,13 @@ const skill = defineCollection({
       .array()
       .optional(),
     type: z.enum(['Library/Framework', 'Language', 'Tool/Other']),
+    jobs: z
+      .object({
+        name: z.string(),
+        link: z.string(),
+      })
+      .array()
+      .optional(),
   }),
 });
 

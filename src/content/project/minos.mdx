@@ -1,0 +1,47 @@
+---
+title: Minos
+shortDescription: Project I worked on while working at ANV Production. I was responsible for creating a whole ecosystem for wirelessly communicating devices.
+technologies:
+  - name: Arduino
+    link: https://www.arduino.cc/
+  - name: Raspberry Pi
+    link: https://www.raspberrypi.com/
+  - name: NextJS
+    link: https://nextjs.org/
+  - name: TypeScript
+    link: https://www.typescriptlang.org/
+  - name: Python
+    link: https://www.python.org/
+  - name: Flask
+    link: https://flask.palletsprojects.com/en/3.0.x/
+  - name: Socket.IO
+    link: https://socket.io/
+links:
+  - name: ANV
+    link: https://anvproduction.pl/
+priority: 3
+createdOn: 2023-08-31
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
+import { Link } from '~/components/ui/link';
+import { BriefcaseBusiness } from 'lucide-react';
+
+export const components = mapComponents();
+
+<ProjectHeader>
+  <slot slot='headerTitle'>{frontmatter.title}</slot>
+  <slot slot='linkContent'>
+    <Link href={frontmatter.links[0].link}>
+      <BriefcaseBusiness />
+      {frontmatter.links[0].name}
+    </Link>
+  </slot>
+</ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>

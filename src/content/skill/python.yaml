@@ -1,14 +1,11 @@
-name: JavaScript
-link: https://developer.mozilla.org/en-US/docs/Web/javascript
+name: Python
+link: https://www.python.org/
 type: Language
 projects:
   - name: rest-api-performance
     link: /projects/rest-api-performance
   - name: Minos
     link: /projects/minos
-  - name: lunar-roller
-    link: /projects/lunar-roller
-description: 'First programming language I ever learned'
 jobs:
   - name: ANV
     link: https://anvproduction.pl/

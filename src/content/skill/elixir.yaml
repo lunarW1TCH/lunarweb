@@ -1,0 +1,6 @@
+name: Elixir
+link: https://elixir-lang.org/
+type: Language
+projects:
+  - name: rest-api-performance
+    link: /projects/rest-api-performance

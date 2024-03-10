@@ -1,0 +1,13 @@
+name: NextJS
+link: https://nextjs.org/
+type: Library/Framework
+projects:
+  - name: Lunarweb
+    link: /
+  - name: Minos
+    link: /projects/minos
+jobs:
+  - name: 4CF
+    link: https://www.linkedin.com/company/4cf/
+  - name: ANV
+    link: https://anvproduction.pl/

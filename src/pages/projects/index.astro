@@ -2,14 +2,23 @@
 import { getCollection } from 'astro:content';
 import MainLayout from '~/layouts/MainLayout.astro';
 import ProjectItem from '~/components/projects/ProjectItem.astro';
+import { vstack } from '~panda/patterns';
 
 const projectEntries = await getCollection('project');
 ---
 
 <MainLayout>
-  {
-    projectEntries
-      .sort((a, b) => a.data.priority - b.data.priority)
-      .map((entry) => <ProjectItem project={entry} />)
-  }
+  <div
+    class={vstack({
+      w: '100%',
+      gap: '4',
+      my: '12',
+    })}
+  >
+    {
+      projectEntries
+        .sort((a, b) => a.data.priority - b.data.priority)
+        .map((entry) => <ProjectItem project={entry} />)
+    }
+  </div>
 </MainLayout>
