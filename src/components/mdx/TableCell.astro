@@ -1,0 +1,14 @@
+---
+import * as TableUI from '~/components/ui/table';
+import { css } from '~panda/css';
+---
+
+<TableUI.Cell
+  className={css({
+    py: '2',
+    minW: 'fit-content',
+    textAlign: 'center',
+  })}
+>
+  <slot />
+</TableUI.Cell>

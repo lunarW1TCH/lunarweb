@@ -1,0 +1,17 @@
+---
+import * as TableUI from '~/components/ui/table';
+import { css } from '~panda/css';
+---
+
+<div
+  class={css({
+    p: '2',
+
+    overflowX: 'scroll',
+    minW: '500px',
+  })}
+>
+  <TableUI.Root w='100%'>
+    <slot />
+  </TableUI.Root>
+</div>

@@ -24,7 +24,6 @@ const project = defineCollection({
         link: z.string().url().optional(),
       })
     ),
-    imagePath: z.string(),
     links: z
       .array(
         z.object({
@@ -36,4 +35,35 @@ const project = defineCollection({
   }),
 });
 
-export const collections = { blog, project };
+const vector = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    related: z
+      .object({
+        name: z.string(),
+        link: z.string(),
+      })
+      .array()
+      .optional(),
+  }),
+});
+
+const skill = defineCollection({
+  type: 'data',
+  schema: z.object({
+    name: z.string(),
+    link: z.string().url(),
+    description: z.string().optional(),
+    projects: z
+      .object({
+        name: z.string(),
+        link: z.string(),
+      })
+      .array()
+      .optional(),
+    type: z.enum(['Library/Framework', 'Language', 'Tool/Other']),
+  }),
+});
+
+export const collections = { blog, project, vector, skill };

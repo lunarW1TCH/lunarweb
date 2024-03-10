@@ -1,0 +1,15 @@
+---
+import { css } from '~panda/css';
+import H2 from '../mdx/H2.astro';
+---
+
+<div
+  class={css({
+    w: '100%',
+    display: 'flex',
+    justifyContent: 'space-between',
+  })}
+>
+  <H2><slot name='headerTitle' /></H2>
+  <slot name='linkContent' />
+</div>

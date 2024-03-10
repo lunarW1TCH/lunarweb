@@ -9,37 +9,52 @@ import H5 from './H5.astro';
 import P from './P.astro';
 import A from './A.astro';
 import Pre from './Pre.astro';
+import Code from './Code.astro';
+import Table from './Table.astro';
+import TableHead from './TableHead.astro';
+import TableRow from './TableRow.astro';
+import TableHeader from './TableHeader.astro';
+import TableBody from './TableBody.astro';
+import TableCell from './TableCell.astro';
 
-const components = ['h1', 'h2', 'h3', 'h4', 'h5', 'p', 'pre', 'a'] as const;
+const components = [
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'p',
+  'pre',
+  'a',
+  'table',
+  'thead',
+  'tr',
+  'th',
+  'tbody',
+  'td',
+  'code',
+] as const;
 
 export type MarkdownComponents = ArrayMember<typeof components>;
 
-export const mapComponents = (include: MarkdownComponents[], all?: boolean) => {
-  const components: Partial<
-    Record<MarkdownComponents, (_props: Props) => any>
-  > = {};
-
-  if (all) {
-    components.h1 = H1;
-    components.h2 = H2;
-    components.h3 = H3;
-    components.h4 = H4;
-    components.h5 = H5;
-    components.p = P;
-    components.a = A;
-    components.pre = Pre;
-
-    return components;
-  }
-
-  if (include.includes('h1')) components.h1 = H1;
-  if (include.includes('h2')) components.h2 = H2;
-  if (include.includes('h3')) components.h3 = H3;
-  if (include.includes('h4')) components.h4 = H4;
-  if (include.includes('h5')) components.h5 = H5;
-  if (include.includes('p')) components.p = P;
-  if (include.includes('a')) components.a = A;
-  if (include.includes('pre')) components.pre = Pre;
+export const mapComponents = () => {
+  const components: Record<MarkdownComponents, (_props: Props) => any> = {
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    h5: H5,
+    p: P,
+    a: A,
+    pre: Pre,
+    table: Table,
+    thead: TableHead,
+    tr: TableRow,
+    th: TableHeader,
+    tbody: TableBody,
+    td: TableCell,
+    code: Code,
+  };
 
   return components;
 };

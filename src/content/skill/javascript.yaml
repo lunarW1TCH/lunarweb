@@ -1,0 +1,6 @@
+name: JavaScript
+link: https://developer.mozilla.org/en-US/docs/Web/javascript
+type: Language
+projects:
+  - name: rest-api-performance
+    link: /projects/rest-api-performance

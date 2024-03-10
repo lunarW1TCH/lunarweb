@@ -17,6 +17,7 @@ const Navigation = (props: NavigationProps) => {
       bgColor='bg.default'
       px='4'
       gap='4'
+      zIndex={100}
     >
       <Button
         ml={pathname === '/' ? '-16' : '0'}
