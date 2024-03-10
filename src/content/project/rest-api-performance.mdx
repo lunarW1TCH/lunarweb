@@ -29,9 +29,12 @@ technologies:
 links:
   - name: Github
     link: https://github.com/lunarW1TCH/rest-api-performance
+priority: 2
+createdOn: 2023-12-31
 ---
 
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import { Github } from 'lucide-react';
 import { Link } from '~/components/ui/link';
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
@@ -46,6 +49,11 @@ export const components = mapComponents();
     </Link>
   </slot>
 </ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>
 
 ### Introduction
 

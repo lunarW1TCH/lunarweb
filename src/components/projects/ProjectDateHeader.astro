@@ -1,0 +1,47 @@
+---
+import { css } from '~panda/css';
+import { hstack, vstack } from '~panda/patterns';
+
+type Props = {
+  createdOn: Date;
+  updatedOn?: Date;
+};
+
+const textClass = css({
+  color: 'fg.muted',
+});
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+  dateStyle: 'full',
+};
+
+const { createdOn, updatedOn } = Astro.props;
+---
+
+<div
+  class={hstack({
+    w: '100%',
+    justifyContent: 'flex-end',
+    mb: '4',
+  })}
+>
+  <div
+    class={vstack({
+      alignItems: 'flex-end',
+    })}
+  >
+    <p class={textClass}>
+      created on: {
+        new Date(createdOn).toLocaleDateString(undefined, dateOptions)
+      }
+    </p>
+    {
+      updatedOn && (
+        <p class={textClass}>
+          updated on:{' '}
+          {new Date(updatedOn).toLocaleDateString(undefined, dateOptions)}
+        </p>
+      )
+    }
+  </div>
+</div>

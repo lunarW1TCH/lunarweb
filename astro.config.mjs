@@ -18,7 +18,7 @@ export default defineConfig({
   adapter: vercel(),
   markdown: {
     shikiConfig: {
-      theme: 'rose-pine-moon',
+      theme: 'catppuccin-mocha',
       wrap: true,
     },
     gfm: true,

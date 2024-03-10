@@ -32,6 +32,9 @@ const project = defineCollection({
         })
       )
       .optional(),
+    priority: z.number().int(),
+    createdOn: z.date(),
+    updatedOn: z.date().optional(),
   }),
 });
 

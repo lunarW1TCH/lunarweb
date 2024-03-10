@@ -7,5 +7,9 @@ const projectEntries = await getCollection('project');
 ---
 
 <MainLayout>
-  {projectEntries.map((entry) => <ProjectItem project={entry} />)}
+  {
+    projectEntries
+      .sort((a, b) => a.data.priority - b.data.priority)
+      .map((entry) => <ProjectItem project={entry} />)
+  }
 </MainLayout>
