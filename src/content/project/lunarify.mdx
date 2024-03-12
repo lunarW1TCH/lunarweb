@@ -1,0 +1,87 @@
+---
+title: lunarify
+shortDescription: Mobile and web app which uses OAuth to display data from user's Spotify account.
+technologies:
+  - name: TypeScript
+    link: https://www.typescriptlang.org/
+  - name: React
+    link: https://react.dev/
+  - name: SCSS
+    link: https://sass-lang.com/
+  - name: React Native
+    link: https://reactnative.dev/
+  - name: OAuth
+    link: https://oauth.net/2/
+links:
+  - name: Web app
+    link: https://github.com/lunarW1TCH/lunarify-react
+  - name: Mobile app
+    link: https://github.com/lunarW1TCH/lunarify-react-native
+priority: 9
+createdOn: 2023-06-19
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
+import { Link } from '~/components/ui/link';
+import { Github } from 'lucide-react';
+import { css } from '~panda/css';
+
+export const components = mapComponents();
+
+<ProjectHeader>
+  <slot slot='headerTitle'>{frontmatter.title}</slot>
+  <slot slot='linkContent'>
+    <Link
+      href={frontmatter.links[0].link}
+      className={css({
+        textWrap: 'nowrap',
+      })}
+    >
+      <Github />
+      {frontmatter.links[0].name}
+    </Link>
+    <Link
+      ml='4'
+      href={frontmatter.links[1].link}
+      className={css({
+        textWrap: 'nowrap',
+      })}
+    >
+      <Github />
+      {frontmatter.links[1].name}
+    </Link>
+  </slot>
+</ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>
+
+### Introduction
+
+Lunarify was my first solo project of such complexity. I created two apps, one with React and the other with React Native. Both were using Spotify API to display 'Spotify wrapped all-year-round'.
+
+<br />
+
+![Two of my most-listened-to artists on Spotify as seen in Lunarify](/src/assets/lunarify.png)
+
+<br />
+
+### CSS-in-JS
+
+It was actually React Native which introduced me to CSS-in-JS. As apps created with it aren't actually websites but native apps manipulated through JavaScript, styling couldn't be done with CSS.
+
+<br />
+
+React Native uses style system which translates to native code on both Android and iOS yet with syntax and functionality that reminds of CSS. The principle is the same as in web-based CSS-in-JS: styles are written in JavaScript (or TypeScript and then also typechecked) and translated to and transformed to valid styles during build-time.
+
+<br />
+
+I haven't made any of Lunarify apps publicly accessible but feel free to browse through the code on my Github account.
+
+<br />
+
+If you're looking for an app with similar functionality then try [Skiley.](https://skiley.net/)

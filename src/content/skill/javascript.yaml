@@ -8,7 +8,6 @@ projects:
     link: /projects/minos
   - name: lunar-roller
     link: /projects/lunar-roller
-description: 'First programming language I ever learned'
 jobs:
   - name: ANV
     link: https://anvproduction.pl/
