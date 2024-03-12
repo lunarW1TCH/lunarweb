@@ -19,6 +19,8 @@ import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import { Link } from '~/components/ui/link';
 import { Github, AppWindowMac } from 'lucide-react';
 
+export const components = mapComponents();
+
 <ProjectHeader>
   <slot slot='headerTitle'>{frontmatter.title}</slot>
   <slot slot='linkContent'>
@@ -37,3 +39,33 @@ import { Github, AppWindowMac } from 'lucide-react';
   createdOn={frontmatter.createdOn}
   updatedOn={frontmatter.updatedOn}
 />
+
+The first website I have ever built. It is actually the first project of mine that I dare say is complete and functional.
+
+<br />
+
+### Process of learning
+
+Between the end of my second and beginning of the third year of attending university I decided to finally start learning programming for 'real'. Before I had some knowledge of programming from attending classes at uni but it was never something I felt good at so I decided to change it.
+
+<br />
+
+I started out with learning from a [Udemy course from Jonas Schmedtmann](https://www.udemy.com/course/the-complete-javascript-course/?couponCode=ST15MT31224). It is a huge course, over 60 hours of content but it helped me learn the ins and outs of vanilla JavaScript and gain confidence with starting to experiment on my own.
+
+<br />
+
+### Idea
+
+I wanted to build an app by myself to use the knowledge I gained through the course. I knew it had to be simple in the beginning to not discourage myself by trying to tackle too big of a project for a beginner.
+
+<br />
+
+![Screenshot from the lunar-roller](/src/assets/lunar-roller.png)
+
+<br />
+
+The website allows users to roll a set of basic [Dungeons and Dragons](https://dnd.wizards.com/) dice. I am a huge dnd nerd so it seemed like a fitting first project.
+
+<br />
+
+Of course the website is nowhere near perfect but I am still proud of it as it reminds me how far I've come since then.

@@ -5,7 +5,6 @@ import { flex, hstack } from '~panda/patterns';
 import { Link } from '../ui/link';
 import { Icon } from '../ui/icon';
 import { Diamond, BriefcaseBusiness } from 'lucide-react';
-import P from '../mdx/P.astro';
 import { css } from '~panda/css';
 import { Badge } from '../ui/badge';
 
@@ -78,13 +77,15 @@ const { skill } = Astro.props;
         justifyContent: 'flex-end',
       })}
     >
-      <P
+      <p
         class={css({
           justifySelf: 'flex-end',
+          textAlign: 'right',
+          ml: '4',
         })}
       >
         {skill.data.description}
-      </P>
+      </p>
     </div>
   </div>
   <div

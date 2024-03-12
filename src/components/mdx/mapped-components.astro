@@ -8,6 +8,7 @@ import H4 from './H4.astro';
 import H5 from './H5.astro';
 import P from './P.astro';
 import A from './A.astro';
+import Img from './Img.astro';
 import Pre from './Pre.astro';
 import Code from './Code.astro';
 import Table from './Table.astro';
@@ -33,6 +34,7 @@ const components = [
   'tbody',
   'td',
   'code',
+  'img',
 ] as const;
 
 export type MarkdownComponents = ArrayMember<typeof components>;
@@ -54,6 +56,7 @@ export const mapComponents = () => {
     tbody: TableBody,
     td: TableCell,
     code: Code,
+    img: Img,
   };
 
   return components;

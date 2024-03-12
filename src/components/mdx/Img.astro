@@ -1,0 +1,32 @@
+---
+import { css } from '~panda/css';
+import { vstack } from '~panda/patterns';
+
+type Props = astroHTML.JSX.DefinedIntrinsicElements['img'];
+
+const props = Astro.props;
+---
+
+<div
+  class={vstack({
+    w: '100%',
+  })}
+>
+  <img
+    {...props}
+    class={css({
+      border: '1px solid',
+      borderColor: 'border.subtle',
+      rounded: 'md',
+    })}
+  />
+  <p
+    class={css({
+      fontStyle: 'italic',
+      fontSize: 'sm',
+      color: 'accent.text',
+    })}
+  >
+    {props.alt}
+  </p>
+</div>
