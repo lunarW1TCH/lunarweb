@@ -22,11 +22,13 @@ createdOn: 2023-06-19
 ---
 
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import { Link } from '~/components/ui/link';
 import { Github } from 'lucide-react';
 import { css } from '~panda/css';
+import lunarifyImg from '~/assets/lunarify.png';
 
 export const components = mapComponents();
 
@@ -66,7 +68,10 @@ Lunarify was my first solo project of such complexity. I created two apps, one w
 
 <br />
 
-![Two of my most-listened-to artists on Spotify as seen in Lunarify](/src/assets/lunarify.png)
+<Img
+  src={lunarifyImg}
+  alt='Two of my most-listened-to artists on Spotify as seen in Lunarify'
+/>
 
 <br />
 

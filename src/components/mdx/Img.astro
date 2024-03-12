@@ -1,10 +1,14 @@
 ---
+import { Image } from 'astro:assets';
 import { css } from '~panda/css';
 import { vstack } from '~panda/patterns';
 
-type Props = astroHTML.JSX.DefinedIntrinsicElements['img'];
+type Props = {
+  alt: string;
+  src: string;
+};
 
-const props = Astro.props;
+const { alt, src } = Astro.props;
 ---
 
 <div
@@ -12,13 +16,16 @@ const props = Astro.props;
     w: '100%',
   })}
 >
-  <img
-    {...props}
+  <!-- astro image component doesn't behave like in docs with typescript -->
+  <!-- @ts-expect-error -->
+  <Image
+    alt={alt}
     class={css({
       border: '1px solid',
       borderColor: 'border.subtle',
       rounded: 'md',
     })}
+    src={src}
   />
   <p
     class={css({
@@ -27,6 +34,6 @@ const props = Astro.props;
       color: 'accent.text',
     })}
   >
-    {props.alt}
+    {alt}
   </p>
 </div>

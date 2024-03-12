@@ -14,10 +14,12 @@ createdOn: 2022-12-27
 ---
 
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import { Link } from '~/components/ui/link';
 import { Github, AppWindowMac } from 'lucide-react';
+import lunarRoller from '~/assets/lunar-roller.png';
 
 export const components = mapComponents();
 
@@ -60,7 +62,7 @@ I wanted to build an app by myself to use the knowledge I gained through the cou
 
 <br />
 
-![Screenshot from the lunar-roller](/src/assets/lunar-roller.png)
+<Img src={lunarRoller} alt='Screenshot from the lunar-roller' />
 
 <br />
 

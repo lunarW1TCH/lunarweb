@@ -24,10 +24,12 @@ createdOn: 2023-08-31
 ---
 
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import { Link } from '~/components/ui/link';
 import { BriefcaseBusiness } from 'lucide-react';
+import minosImg from '~/assets/minos.jpg';
 
 export const components = mapComponents();
 
@@ -56,7 +58,10 @@ Minos required me to work with Arduino devices, figure out how the actual hardwa
 
 <br />
 
-![One of the pictures I took during working on connecting radio modules to Arduino](/src/assets/minos.jpg)
+<Img
+  alt='One of the pictures I took during working on connecting radio modules to Arduino'
+  src={minosImg}
+/>
 
 <br />
 
