@@ -50,14 +50,14 @@ const Navigation = (props: NavigationProps) => {
       >
         <Link href='/skills'>Skills</Link>
       </Button>
-      <Button
+      {/* <Button
         onClick={() => navigate('/docs')}
         variant='ghost'
         asChild
         transition='all 0.2s ease-in-out'
       >
         <Link href='/docs'>Docs</Link>
-      </Button>
+      </Button> */}
     </HStack>
   );
 };
