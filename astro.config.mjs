@@ -15,7 +15,9 @@ export default defineConfig({
     }),
   ],
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({
+    webAnalytics: true,
+  }),
   markdown: {
     shikiConfig: {
       theme: 'catppuccin-mocha',
