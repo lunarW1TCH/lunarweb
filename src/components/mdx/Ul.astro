@@ -1,0 +1,22 @@
+---
+import { css } from '~panda/css';
+
+type Props = astroHTML.JSX.DefinedIntrinsicElements['a'];
+
+const props = Astro.props;
+---
+
+<ul
+  {...props}
+  class={css({
+    fontSize: 'md',
+    fontFamily: 'dosis',
+    listStyle: 'inside',
+    listStylePosition: 'outside',
+    mx: '4',
+    textWrap: 'nowrap',
+    w: '100%',
+  })}
+>
+  <slot />
+</ul>

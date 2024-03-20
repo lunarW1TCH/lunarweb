@@ -16,6 +16,7 @@ import TableRow from './TableRow.astro';
 import TableHeader from './TableHeader.astro';
 import TableBody from './TableBody.astro';
 import TableCell from './TableCell.astro';
+import Ul from './Ul.astro';
 
 const components = [
   'h1',
@@ -33,6 +34,7 @@ const components = [
   'tbody',
   'td',
   'code',
+  'ul',
 ] as const;
 
 export type MarkdownComponents = ArrayMember<typeof components>;
@@ -54,6 +56,7 @@ export const mapComponents = () => {
     tbody: TableBody,
     td: TableCell,
     code: Code,
+    ul: Ul,
   };
 
   return components;

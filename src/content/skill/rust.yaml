@@ -4,4 +4,6 @@ type: Language
 projects:
   - name: rest-api-performance
     link: /projects/rest-api-performance
+  - name: exchange_rates
+    link: /projects/exchange_rates
 description: My def fav 🦀

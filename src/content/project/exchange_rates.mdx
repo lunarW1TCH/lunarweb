@@ -1,0 +1,75 @@
+---
+title: exchange_rates
+shortDescription: Simple cli app for performing rate conversions of currencies.
+technologies:
+  - name: Rust
+    link: https://www.rust-lang.org/
+  - name: Docker
+    link: https://www.docker.com/
+
+links:
+  - name: Github
+    link: https://github.com/lunarW1TCH/exchange_rates
+priority: 3
+createdOn: 2024-03-20
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
+import { Github } from 'lucide-react';
+import { Link } from '~/components/ui/link';
+
+export const components = mapComponents();
+
+<ProjectHeader>
+  <slot slot='headerTitle'>{frontmatter.title}</slot>
+  <slot slot='linkContent'>
+    <Link href={frontmatter.links[0].link}>
+      <Github />
+      {frontmatter.links[0].name}
+    </Link>
+  </slot>
+</ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>
+
+Recently I had to create this project as a task.
+
+### What it is
+
+A command-line tool in Rust that converts amounts between different currencies using
+real-time exchange rate data fetched from an API.
+
+<br />
+
+### Tech overview
+
+- **Rust** - implementation language
+  - **serde** - serialization and deserialization of structs
+  - **reqwest** - http requests
+  - **tokio** - async runtime
+  - **clap** - easy cli setup
+- **Docker** - dockerfile included for easy building and testing
+- **AlphaVantage** - [a real-time currency exchange API](https://www.alphavantage.co/) with a free plan
+
+<br />
+
+### Example
+
+#### Command
+
+```sh
+docker run exchange -t USD -f PLN -a 7
+```
+
+#### Result
+
+```
+Exchange from Polish Zloty into United States Dollar:
+Exchange rate: 0.25090000,
+7PLN = 1.7563USD
+```

@@ -36,6 +36,18 @@ const vector = defineCollection({
       })
       .array()
       .optional(),
+    next: z
+      .object({
+        name: z.string(),
+        link: z.string(),
+      })
+      .optional(),
+    previous: z
+      .object({
+        name: z.string(),
+        link: z.string(),
+      })
+      .optional(),
   }),
 });
 
