@@ -25,8 +25,8 @@ import { mapComponents } from '~/components/mdx/mapped-components.astro';
 import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
-import { Link } from '~/components/ui/link';
-import { Github } from 'lucide-react';
+import BaseLink from '~/components/ui/BaseLink.vue';
+import { Github } from 'lucide-astro';
 import { css } from '~panda/css';
 import lunarifyImg from '~/assets/lunarify.png';
 
@@ -35,25 +35,25 @@ export const components = mapComponents();
 <ProjectHeader>
   <slot slot='headerTitle'>{frontmatter.title}</slot>
   <slot slot='linkContent'>
-    <Link
+    <BaseLink
       href={frontmatter.links[0].link}
-      className={css({
+      class={css({
         textWrap: 'nowrap',
       })}
     >
       <Github />
       {frontmatter.links[0].name}
-    </Link>
-    <Link
-      ml='4'
+    </BaseLink>
+    <BaseLink
       href={frontmatter.links[1].link}
-      className={css({
+      class={css({
         textWrap: 'nowrap',
+        ml: '4',
       })}
     >
       <Github />
       {frontmatter.links[1].name}
-    </Link>
+    </BaseLink>
   </slot>
 </ProjectHeader>
 

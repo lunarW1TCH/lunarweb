@@ -5,7 +5,7 @@ import '../styles/index.css';
 import '@fontsource-variable/dosis';
 import { ViewTransitions } from 'astro:transitions';
 
-import Navigation from '~/components/Navigation';
+import BaseNavigation from '~/components/BaseNavigation.vue';
 
 type Props = {
   title?: string;
@@ -38,7 +38,8 @@ const { title = 'Lunarweb' } = Astro.props;
       fontFamily: 'dosis',
     })}
   >
-    <Navigation transition:persist {pathname} client:load />
+    <!-- <Navigation transition:persist {pathname} client:load /> -->
+    <BaseNavigation {pathname} client:load />
     <main
       class={css({
         display: 'flex',

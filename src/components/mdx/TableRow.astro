@@ -1,16 +1,19 @@
 ---
-import * as TableUI from '~/components/ui/table';
+import { table } from '~panda/recipes';
 import { css } from '~panda/css';
 ---
 
-<TableUI.Row
-  className={css({
-    borderY: '1px solid',
-    borderColor: 'border.muted',
-    _hover: {
-      bgColor: 'bg.muted',
-    },
-  })}
+<tr
+  class:list={[
+    table().row,
+    css({
+      borderY: '1px solid',
+      borderColor: 'border.muted',
+      _hover: {
+        bgColor: 'bg.muted',
+      },
+    }),
+  ]}
 >
   <slot />
-</TableUI.Row>
+</tr>

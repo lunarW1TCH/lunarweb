@@ -1,17 +1,16 @@
 ---
-import * as TableUI from '~/components/ui/table';
 import { css } from '~panda/css';
+import { table } from '~panda/recipes';
 ---
 
 <div
   class={css({
     p: '2',
-
-    minW: '500px',
     overflowX: 'auto',
+    maxW: '500%',
   })}
 >
-  <TableUI.Root w='100%'>
+  <table class:list={[table().root, css({ w: '100%' })]}>
     <slot />
-  </TableUI.Root>
+  </table>
 </div>

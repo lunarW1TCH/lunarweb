@@ -3,10 +3,10 @@ import type { CollectionEntry } from 'astro:content';
 import { flex } from '~panda/patterns';
 import H1 from '../mdx/H1.astro';
 import P from '../mdx/P.astro';
-import { Badge } from '../ui/badge';
-import { Link } from '../ui/link';
-import { SquareArrowOutUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-astro';
 import { css } from '~panda/css';
+import BaseLink from '../ui/BaseLink.vue';
+import BaseBadge from '../ui/BaseBadge.vue';
 
 type Props = {
   project: CollectionEntry<'project'>;
@@ -33,16 +33,16 @@ const { project } = Astro.props;
       display: project.body ? undefined : 'none',
     })}
   >
-    <Link href={`/projects/${project.slug}`}>
+    <BaseLink href={`/projects/${project.slug}`}>
       {project.data.title}
-      <SquareArrowOutUpRight
+      <ArrowUpRight
         className={css({
           w: '16px',
           h: '16px',
           mb: '2.5',
         })}
       />
-    </Link>
+    </BaseLink>
   </H1>
   <P>{project.data.shortDescription}</P>
   <div
@@ -54,9 +54,9 @@ const { project } = Astro.props;
   >
     {
       project.data.technologies.map((tech) => (
-        <Badge>
-          <Link href={tech.link}>{tech.name}</Link>
-        </Badge>
+        <BaseBadge>
+          <BaseLink href={tech.link}>{tech.name}</BaseLink>
+        </BaseBadge>
       ))
     }
   </div>

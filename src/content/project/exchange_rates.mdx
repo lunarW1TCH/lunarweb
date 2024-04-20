@@ -17,18 +17,18 @@ createdOn: 2024-03-20
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
-import { Github } from 'lucide-react';
-import { Link } from '~/components/ui/link';
+import { Github } from 'lucide-astro';
+import BaseLink from '~/components/ui/BaseLink.vue';
 
 export const components = mapComponents();
 
 <ProjectHeader>
   <slot slot='headerTitle'>{frontmatter.title}</slot>
   <slot slot='linkContent'>
-    <Link href={frontmatter.links[0].link}>
+    <BaseLink href={frontmatter.links[0].link}>
       <Github />
       {frontmatter.links[0].name}
-    </Link>
+    </BaseLink>
   </slot>
 </ProjectHeader>
 

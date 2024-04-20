@@ -35,18 +35,18 @@ createdOn: 2023-12-31
 
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
-import { Github } from 'lucide-react';
-import { Link } from '~/components/ui/link';
+import BaseLink from '~/components/ui/BaseLink.vue';
+import { Github } from 'lucide-astro';
 import { mapComponents } from '~/components/mdx/mapped-components.astro';
 export const components = mapComponents();
 
 <ProjectHeader>
   <slot slot='headerTitle'>REST API PERFORMANCE</slot>
   <slot slot='linkContent'>
-    <Link href={frontmatter.links[0].link}>
+    <BaseLink href={frontmatter.links[0].link}>
       <Github />
       {frontmatter.links[0].name}
-    </Link>
+    </BaseLink>
   </slot>
 </ProjectHeader>
 

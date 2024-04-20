@@ -1,14 +1,18 @@
 ---
-import * as TableUI from '~/components/ui/table';
+import { table } from '~panda/recipes';
 import { css } from '~panda/css';
 ---
 
-<TableUI.Cell
-  className={css({
-    py: '2',
-    minW: 'fit-content',
-    textAlign: 'center',
-  })}
+<td
+  class:list={[
+    table().cell,
+    css({
+      py: '2',
+      minW: 'fit-content',
+      textAlign: 'center',
+      textWrap: 'nowrap',
+    }),
+  ]}
 >
   <slot />
-</TableUI.Cell>
+</td>

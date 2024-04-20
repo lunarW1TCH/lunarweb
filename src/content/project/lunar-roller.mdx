@@ -17,8 +17,9 @@ import { mapComponents } from '~/components/mdx/mapped-components.astro';
 import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
-import { Link } from '~/components/ui/link';
-import { Github, AppWindowMac } from 'lucide-react';
+import BaseLink from '~/components/ui/BaseLink.vue';
+import { css } from '~panda/css';
+import { Github, AppWindowMac } from 'lucide-astro';
 import lunarRoller from '~/assets/lunar-roller.png';
 
 export const components = mapComponents();
@@ -26,14 +27,14 @@ export const components = mapComponents();
 <ProjectHeader>
   <slot slot='headerTitle'>{frontmatter.title}</slot>
   <slot slot='linkContent'>
-    <Link href={frontmatter.links[0].link}>
+    <BaseLink href={frontmatter.links[0].link}>
       <Github />
       {frontmatter.links[0].name}
-    </Link>
-    <Link ml='4' href={frontmatter.links[1].link}>
+    </BaseLink>
+    <BaseLink class={css({ ml: '4' })} href={frontmatter.links[1].link}>
       <AppWindowMac />
       {frontmatter.links[1].name}
-    </Link>
+    </BaseLink>
   </slot>
 </ProjectHeader>
 

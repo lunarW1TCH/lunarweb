@@ -1,7 +1,7 @@
 ---
-import * as TableUI from '~/components/ui/table';
+import { table } from '~panda/recipes';
 ---
 
-<TableUI.Body>
+<tbody class={table().body}>
   <slot />
-</TableUI.Body>
+</tbody>

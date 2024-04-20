@@ -1,14 +1,14 @@
 {
   "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "jsxImportSource": "react",
-    "baseUrl": ".",
+    "baseUrl": "/Users/luna/Library/CloudStorage/ProtonDrive-lunarw1tch@proton.me/programming/lunarweb",
     "paths": {
       "~/*": ["./src/*"],
       "~panda/*": ["./styled-system/*"]
     },
     "strictNullChecks": true
   },
-  "include": ["src", "styled-system"]
+  "include": ["src", "styled-system", "./src/*.vue"]
 }

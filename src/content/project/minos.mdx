@@ -27,8 +27,8 @@ import { mapComponents } from '~/components/mdx/mapped-components.astro';
 import Img from '~/components/mdx/Img.astro';
 import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
-import { Link } from '~/components/ui/link';
-import { BriefcaseBusiness } from 'lucide-react';
+import BaseLink from '~/components/ui/BaseLink.vue';
+import { BriefcaseBusiness } from 'lucide-astro';
 import minosImg from '~/assets/minos.jpg';
 
 export const components = mapComponents();
@@ -36,10 +36,10 @@ export const components = mapComponents();
 <ProjectHeader>
   <slot slot='headerTitle'>{frontmatter.title}</slot>
   <slot slot='linkContent'>
-    <Link href={frontmatter.links[0].link}>
+    <BaseLink href={frontmatter.links[0].link}>
       <BriefcaseBusiness />
       {frontmatter.links[0].name}
-    </Link>
+    </BaseLink>
   </slot>
 </ProjectHeader>
 

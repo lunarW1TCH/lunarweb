@@ -1,7 +1,8 @@
 ---
-import * as TableUI from '~/components/ui/table';
+import { css } from '~panda/css';
+import { table } from '~panda/recipes';
 ---
 
-<TableUI.Head>
+<thead class:list={[table().header, css({ textAlign: 'center' })]}>
   <slot />
-</TableUI.Head>
+</thead>

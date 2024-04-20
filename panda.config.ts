@@ -7,14 +7,14 @@ export default defineConfig({
   presets: [
     '@pandacss/preset-base',
     createPreset({
-      accentColor: 'violet',
-      grayColor: 'mauve',
+      accentColor: 'mint',
+      grayColor: 'sage',
       borderRadius: 'sm',
     }),
   ],
   include: [
-    './src/**/*.{ts,tsx,js,jsx,astro,mdx}',
-    './pages/**/*.{ts,tsx,js,jsx,astro,mdx}',
+    './src/**/*.{ts,tsx,js,jsx,astro,mdx,vue}',
+    './pages/**/*.{ts,tsx,js,jsx,astro,mdx,vue}',
   ],
   outdir: 'styled-system',
   jsxFramework: 'react',
