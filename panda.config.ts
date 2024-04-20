@@ -17,7 +17,6 @@ export default defineConfig({
     './pages/**/*.{ts,tsx,js,jsx,astro,mdx,vue}',
   ],
   outdir: 'styled-system',
-  jsxFramework: 'react',
   jsxStyleProps: 'all',
   shorthands: true,
   gitignore: true,
