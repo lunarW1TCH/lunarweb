@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import SkillItem from '~/components/skills/SkillItem.astro';
 import MainLayout from '~/layouts/MainLayout.astro';
-import { vstack } from '~panda/patterns';
+import { vstack } from 'styled-system/patterns';
 
 const skillEntries = await getCollection('skill');
 ---

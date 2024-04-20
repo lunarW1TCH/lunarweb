@@ -3,8 +3,7 @@
   "compilerOptions": {
     "baseUrl": "/Users/luna/Library/CloudStorage/ProtonDrive-lunarw1tch@proton.me/programming/lunarweb",
     "paths": {
-      "~/*": ["./src/*"],
-      "~panda/*": ["./styled-system/*"]
+      "~/*": ["./src/*"]
     },
     "strictNullChecks": true
   },

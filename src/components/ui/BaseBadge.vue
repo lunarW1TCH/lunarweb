@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { badge, type BadgeVariantProps } from '~panda/recipes';
+  import { badge, type BadgeVariantProps } from 'styled-system/recipes';
 
   const { variantProps } = defineProps<{ variantProps?: BadgeVariantProps }>();
 </script>

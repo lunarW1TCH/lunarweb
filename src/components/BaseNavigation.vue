@@ -1,7 +1,7 @@
 <script setup lang="ts">
-  import { hstack } from '~panda/patterns';
-  import { button } from '~panda/recipes';
-  import { css } from '~panda/css';
+  import { hstack } from 'styled-system/patterns';
+  import { button } from 'styled-system/recipes';
+  import { css } from 'styled-system/css';
   import BaseLink from '~/components/ui/BaseLink.vue';
   import { Home } from 'lucide-vue-next';
   import { navigate } from 'astro:transitions/client';

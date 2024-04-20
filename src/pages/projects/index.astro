@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import MainLayout from '~/layouts/MainLayout.astro';
 import ProjectItem from '~/components/projects/ProjectItem.astro';
-import { vstack } from '~panda/patterns';
+import { vstack } from 'styled-system/patterns';
 
 const projectEntries = await getCollection('project');
 ---

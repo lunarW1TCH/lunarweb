@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { button } from '~panda/recipes';
-  import type { ButtonVariantProps } from '~panda/recipes/button';
+  import { button } from 'styled-system/recipes';
+  import type { ButtonVariantProps } from 'styled-system/recipes/button';
 
   const { variantProps } = defineProps<{ variantProps?: ButtonVariantProps }>();
 </script>

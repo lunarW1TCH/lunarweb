@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { link } from '~panda/recipes';
+  import { link } from 'styled-system/recipes';
 </script>
 
 <template>

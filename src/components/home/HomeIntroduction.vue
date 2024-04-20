@@ -1,6 +1,6 @@
 <script setup lang="ts">
-  import { card, button } from '~panda/recipes';
-  import { css } from '~panda/css';
+  import { card, button } from 'styled-system/recipes';
+  import { css } from 'styled-system/css';
   import gala from '../../assets/gala.jpg';
   import BaseLink from '~/components/ui/BaseLink.vue';
   import { Github, Linkedin } from 'lucide-vue-next';
@@ -15,20 +15,30 @@
       </div>
     </div>
     <div :class="card().body">
-      <img :class="css({
-        rounded: 'md',
-        borderColor: 'border.muted',
-        border: '2px solid',
-        maxW: '350px',
-        maxH: '350px',
-      })" :src="gala.src" />
+      <img
+        :class="
+          css({
+            rounded: 'md',
+            borderColor: 'border.muted',
+            border: '2px solid',
+            maxW: '350px',
+            maxH: '350px',
+          })
+        "
+        :src="gala.src"
+      />
     </div>
     <div :class="[card().footer, css({ gap: '3' })]">
-      <BaseLink href='https://github.com/lunarW1TCH' :class="[button({ variant: 'outline' }), css({ w: '100%' })]">
+      <BaseLink
+        href="https://github.com/lunarW1TCH"
+        :class="[button({ variant: 'outline' }), css({ w: '100%' })]"
+      >
         <Github width="16px" height="16px" /> Github
       </BaseLink>
-      <BaseLink href='https://www.linkedin.com/in/adrian-zegnalek/'
-        :class="[button({ variant: 'outline' }), css({ w: '100%' })]">
+      <BaseLink
+        href="https://www.linkedin.com/in/adrian-zegnalek/"
+        :class="[button({ variant: 'outline' }), css({ w: '100%' })]"
+      >
         <Linkedin width="16px" height="16px" /> LinkedIn
       </BaseLink>
     </div>
