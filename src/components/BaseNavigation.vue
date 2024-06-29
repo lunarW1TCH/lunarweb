@@ -3,8 +3,7 @@
   import { button } from 'styled-system/recipes';
   import { css } from 'styled-system/css';
   import BaseLink from '~/components/ui/BaseLink.vue';
-  import { Home } from 'lucide-vue-next';
-  import { navigate } from 'astro:transitions/client';
+  import { Home, ArrowUpRight } from 'lucide-vue-next';
 
   const { pathname } = defineProps<{ pathname: string }>();
   const isIndex = pathname === '/';
@@ -37,15 +36,24 @@
           p: '0',
         }),
       ]"
-      @click="navigate('/')"
+      href="/"
     >
       <Home />
     </BaseLink>
-    <BaseLink :class="[btnRecipe]" @click="navigate('/projects')">
-      Projects
-    </BaseLink>
-    <BaseLink :class="[btnRecipe]" @click="navigate('/skills')">
-      Skills
+    <BaseLink :class="[btnRecipe]" href="/projects">Projects</BaseLink>
+    <BaseLink :class="[btnRecipe]" href="/skills">Skills</BaseLink>
+    <div :class="css({ flex: 1 })"></div>
+    <BaseLink :class="[btnRecipe]" href="https://vectors.lunarweb.dev">
+      simple-2d-vectors
+      <ArrowUpRight
+        :class="
+          css({
+            w: '16px',
+            h: '16px',
+            mb: '2.5',
+          })
+        "
+      />
     </BaseLink>
   </nav>
 </template>

@@ -9,6 +9,8 @@ links:
     link: https://github.com/lunarW1TCH/simple-2d-vectors
   - name: npm
     link: https://www.npmjs.com/package/simple-2d-vectors
+  - name: docs
+    link: https://vectors.lunarweb.dev
 priority: 2
 createdOn: 2023-11-12
 ---
@@ -18,7 +20,7 @@ import ProjectHeader from '~/components/projects/ProjectHeader.astro';
 import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
 import BaseLink from '~/components/ui/BaseLink.vue';
 import { css } from 'styled-system/css';
-import { Github, Package } from 'lucide-astro';
+import { Github, Package, FileCode } from 'lucide-astro';
 
 export const components = mapComponents();
 
@@ -33,6 +35,10 @@ export const components = mapComponents();
       <Package />
       {frontmatter.links[1].name}
     </BaseLink>
+    <BaseLink class={css({ ml: '4' })} href={frontmatter.links[2].link}>
+      <FileCode />
+      {frontmatter.links[2].name}
+    </BaseLink>
   </slot>
 </ProjectHeader>
 
@@ -43,16 +49,10 @@ export const components = mapComponents();
 
 ---
 
-<br />
-
-I am currently working on creating better [docs](/docs) on this website. For now you can read about content of the package on my Github or on npm.
-
-<br />
-
----
-
 ### Why?
 
 There's already a ton of vector libraries out there on npm. But I had trouble of finding one for my specific use-case. I needed to use it on server-side however most packages were built to rely on browser APIs or if they weren't they hadn't good TypeScript support.
 
 <br />
+
+### Visit the docs: [simple-2d-vectors](https://vectors.lunarweb.dev)
