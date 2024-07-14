@@ -59,7 +59,7 @@
         "
       />
     </BaseLink>
-    <BaseLink href="https://notbyai.fyi/hi/not-by-ai/" target="_blank">
+    <BaseLink href="https://notbyai.fyi/" target="_blank">
       <img :src="notByAI.src" />
     </BaseLink>
   </nav>
