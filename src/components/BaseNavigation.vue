@@ -4,6 +4,7 @@
   import { css } from 'styled-system/css';
   import BaseLink from '~/components/ui/BaseLink.vue';
   import { Home, ArrowUpRight } from 'lucide-vue-next';
+  import notByAI from 'public/not-by-ai.svg';
 
   const { pathname } = defineProps<{ pathname: string }>();
   const isIndex = pathname === '/';
@@ -43,7 +44,10 @@
     <BaseLink :class="[btnRecipe]" href="/projects">Projects</BaseLink>
     <BaseLink :class="[btnRecipe]" href="/skills">Skills</BaseLink>
     <div :class="css({ flex: 1 })"></div>
-    <BaseLink :class="[btnRecipe]" href="https://vectors.lunarweb.dev">
+    <BaseLink
+      :class="[btnRecipe, css({ mdDown: { display: 'none' } })]"
+      href="https://vectors.lunarweb.dev"
+    >
       simple-2d-vectors
       <ArrowUpRight
         :class="
@@ -54,6 +58,9 @@
           })
         "
       />
+    </BaseLink>
+    <BaseLink href="https://notbyai.fyi/hi/not-by-ai/" target="_blank">
+      <img :src="notByAI.src" />
     </BaseLink>
   </nav>
 </template>
