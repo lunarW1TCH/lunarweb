@@ -11,7 +11,7 @@
     <div :class="card().header">
       <h3 :class="card().title">Hello, I am Adrian Żegnałek</h3>
       <div :class="card().description">
-        A student and software developer from Poznań
+        A software developer from Poznań, Poland
       </div>
     </div>
     <div :class="card().body">
