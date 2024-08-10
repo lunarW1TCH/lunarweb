@@ -15,12 +15,30 @@ const colors = {
   lib: '#ffd1dc',
   lng: '#d1dcff',
   tool: '#dcffd1',
+  minor: '#fdfd96',
 };
 
-const getColor = (type: 'Library/Framework' | 'Language' | 'Tool/Other') => {
-  if (type === 'Language') return colors.lng;
-  else if (type === 'Library/Framework') return colors.lib;
-  else return colors.tool;
+const getColor = (
+  type: 'Library/Framework' | 'Language' | 'Tool/Other' | 'Minor'
+) => {
+  let color: string;
+
+  switch (type) {
+    case 'Library/Framework':
+      color = colors.lib;
+      break;
+    case 'Language':
+      color = colors.lng;
+      break;
+    case 'Tool/Other':
+      color = colors.tool;
+      break;
+    case 'Minor':
+      color = colors.minor;
+      break;
+  }
+
+  return color;
 };
 
 const { skill } = Astro.props;
@@ -48,7 +66,8 @@ const { skill } = Astro.props;
     <Diamond
       color={getColor(skill.data.type)}
       width='18px'
-      style={{ marginRight: '8px' }}
+      height='18px'
+      style={{ marginRight: '8px', minWidth: '18px' }}
     />
     {
       skill.data.link ? (

@@ -1,0 +1,52 @@
+---
+title: (WIP) Taurim
+shortDescription: An open-source mod manager for Rimworld.
+technologies:
+  - name: TypeScript
+    link: https://www.typescriptlang.org/
+  - name: Svelte
+    link: https://svelte.dev/
+  - name: Tauri
+    link: https://tauri.app/
+  - name: Rust
+    link: https://www.rust-lang.org/
+  - name: PandaCSS
+    link: https://panda-css.com/
+priority: 2
+createdOn: 2024-08-10
+---
+
+import { mapComponents } from '~/components/mdx/mapped-components.astro';
+import { Github } from 'lucide-astro';
+import { css } from 'styled-system/css';
+import BaseLink from '~/components/ui/BaseLink.vue';
+import ProjectHeader from '~/components/projects/ProjectHeader.astro';
+import ProjectDateHeader from '~/components/projects/ProjectDateHeader.astro';
+import Img from '~/components/mdx/Img.astro';
+import taurimImg from '~/assets/taurim.png';
+
+export const components = mapComponents();
+
+<ProjectHeader>
+  <slot slot='headerTitle'>{frontmatter.title}</slot>
+  <slot slot='linkContent'></slot>
+</ProjectHeader>
+
+<ProjectDateHeader
+  createdOn={frontmatter.createdOn}
+  updatedOn={frontmatter.updatedOn}
+/>
+
+An **open-source**, **cross-platform** mod manager for [Rimworld.](https://store.steampowered.com/app/294100/RimWorld/)
+
+<br />
+
+My biggest project so far. I decided to create it because managing huge modlists in Rimworld without an external mod manager is really painful. There are already two different solutions available: [RimPy](https://github.com/rimpy-custom/RimPy) and [RimSort](https://github.com/RimSort/RimSort) but I am not a fan of either, for various reasons.
+
+<br />
+
+<Img alt='WIP main screen of Taurim' src={taurimImg} />
+
+<br />
+
+I plan to release an MVP in **Autumn 2024**. After that I'll continue to work on this project along with any contributors that decide to help me.

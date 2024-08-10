@@ -1,0 +1,6 @@
+name: Redux
+link: https://redux.js.org/
+type: Minor
+projects:
+  - name: Lunarify
+    link: /projects/lunarify

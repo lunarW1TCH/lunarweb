@@ -1,0 +1,9 @@
+name: Arduino
+type: Minor
+link: https://www.arduino.cc/
+projects:
+  - name: Minos
+    link: /projects/minos
+jobs:
+  - name: ANV
+    link: https://anvproduction.pl/

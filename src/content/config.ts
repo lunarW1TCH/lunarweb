@@ -64,7 +64,7 @@ const skill = defineCollection({
       })
       .array()
       .optional(),
-    type: z.enum(['Library/Framework', 'Language', 'Tool/Other']),
+    type: z.enum(['Library/Framework', 'Language', 'Tool/Other', 'Minor']),
     jobs: z
       .object({
         name: z.string(),

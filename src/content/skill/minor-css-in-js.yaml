@@ -1,8 +1,13 @@
 name: CSS-in-JS
-type: Library/Framework
+type: Minor
+link: https://panda-css.com/
 projects:
   - name: Lunarweb
     link: /projects/lunarweb
+  - name: (WIP) Taurim
+    link: '/projects/taurim'
+  - name: "Bachelor's thesis"
+    link: https://www.linkedin.com/in/adrian-zegnalek/details/projects/
 jobs:
   - name: 4CF
     link: https://4cf.eu/

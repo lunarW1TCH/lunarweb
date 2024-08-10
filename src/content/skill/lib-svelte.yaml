@@ -1,0 +1,7 @@
+name: Svelte
+link: https://svelte.dev/
+type: Library/Framework
+projects:
+  - name: (WIP) Taurim
+    link: '/projects/taurim'
+description: I 🤍 Svelte

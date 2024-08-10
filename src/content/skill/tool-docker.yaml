@@ -1,0 +1,8 @@
+name: Docker
+link: https://www.docker.com/
+type: Tool/Other
+projects:
+  - name: "Bachelor's thesis"
+    link: https://www.linkedin.com/in/adrian-zegnalek/details/projects/
+  - name: exchange_rates
+    link: /projects/exchange_rates

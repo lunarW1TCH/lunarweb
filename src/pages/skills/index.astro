@@ -30,5 +30,10 @@ const skillEntries = await getCollection('skill');
         .filter((entry) => entry.data.type === 'Tool/Other')
         .map((entry) => <SkillItem skill={entry} />)
     }
+    {
+      skillEntries
+        .filter((entry) => entry.data.type === 'Minor')
+        .map((entry) => <SkillItem skill={entry} />)
+    }
   </div>
 </MainLayout>

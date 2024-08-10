@@ -1,0 +1,9 @@
+name: Raspberry Pi
+type: Minor
+link: https://www.raspberrypi.com/
+projects:
+  - name: Minos
+    link: /projects/minos
+jobs:
+  - name: ANV
+    link: https://anvproduction.pl/

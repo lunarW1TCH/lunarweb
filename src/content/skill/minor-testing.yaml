@@ -1,0 +1,8 @@
+name: Testing (Vitest, Bun-test, etc.)
+link: https://vitest.dev/
+type: Minor
+projects:
+  - name: simple-2d-vectors
+    link: /projects/simple-2d-vectors
+  - name: (WIP) Taurim
+    link: '/projects/taurim'
